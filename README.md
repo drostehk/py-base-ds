@@ -43,7 +43,7 @@ If you decide that you want to either rebuild the environment from scratch OR ma
 
 ## Rolling your own
 If you would like to leverage drostehk/py-base-ds as the base for your Docker image, then you can do the following:
-- Copy the Dockerfile.dev into your repo with the filename Dockerfile and make any additions necessary.
+- Copy the Dockerfile.dev into your repo with the filename Dockerfile and make any additions necessary. You should probably also change the FROM drostehk/py-base-ds:latest to be a specific version of py-base-ds rather than 'latest' in order to get consistent results.
 - Copy the docker-compose.template.yml into your repo with the filename docker-compose.yml. You should modify the following properties according to match your requirements:
  - your-org
  - your-image-name
