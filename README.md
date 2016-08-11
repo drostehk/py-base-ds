@@ -25,7 +25,7 @@ Setup should be relatively straightforward:
 - [Install Docker native](http://www.docker.com/products/overview) for your environment.
 - Run: ```docker-compose up```
 
-Running ```docker-compose up``` will pull the latest version of the drostehk/py-base-ds from our Docker Hub repo, build the py-base-ds-dev image locally, and run the image mounting the example notebooks folder included here as a volume inside the image. This will allow you to access Jupyter via http://localhost:8888.
+Running ```docker-compose up``` will pull the latest version of the drostehk/py-base-ds from our Docker Hub repo, build the py-base-ds-dev image locally, and run the image mounting the example notebooks folder included here as a volume inside the image. This will allow you to access Jupyter via [http://localhost:8888](http://localhost:8888).
 
 ## Workflow
 You are welcome to use this repo standalone. If you do, you may find that you would like to add to or modify the packages contained in the environment.yml from time to time. If you do this, you will need to do the following in order to refresh the packages in the Docker image:
