@@ -1,0 +1,11 @@
+# A simple example Dockerfile for other projects to use. This one simply uses
+# the base image, but adds the environment.yml again and runs updates on the
+# environment.
+FROM drostehk/py-base-ds:latest
+MAINTAINER Bill McCord <bill@droste.hk>
+
+# In the dev environment, we can replace the environment and just run updates
+# in order to avoid rebuilding the entire environment.
+ADD environment.yml /droste/environment.yml
+
+RUN conda env update environment.yml

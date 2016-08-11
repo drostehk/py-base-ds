@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  drostehk:
+    build: .
+    image: your-org/your-image-name
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./your-notebooks-path:/droste/notebooks

@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  drostehk:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    container_name: py-base-ds-dev
+    image: drostehk/py-base-ds-dev
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/droste/notebooks
