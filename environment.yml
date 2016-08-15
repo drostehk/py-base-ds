@@ -39,9 +39,10 @@ dependencies:
 - qt
 - qtconsole=4.2.1=py35_0
 - requests=2.10.0=py35_0
+- scikit-learn=0.17.1=np111py35_2
 - scipy=0.17.1=np111py35_1
 - seaborn=0.7.0=py35_0
-- setuptools=23.0.0=py35_0
+- setuptools=25.1.6=py35_0
 - simplegeneric=0.8.1=py35_1
 - sip=4.18=py35_0
 - six=1.10.0=py35_0
@@ -69,3 +70,4 @@ dependencies:
   - qgrid==0.3.2
   - tqdm==4.7.6
   - widgetsnbextension==1.2.6
+  - xgboost==0.6a2
