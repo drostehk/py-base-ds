@@ -1,6 +1,9 @@
 FROM continuumio/anaconda3:4.1.1
 MAINTAINER Bill McCord <bill@droste.hk>
 
+# Install build essentials to get GCC and Make for XGBoost.
+RUN apt-get update && apt-get install -y build-essential
+
 # Docker caches the statements in order, so we want to put the most expensive
 # statement (setting up the anaconda environment) first so that it is only
 # rebuilt in cases where the environment is modified.
