@@ -21,5 +21,8 @@ VOLUME /droste/notebooks
 # The default Jupyter port.
 EXPOSE 8888
 
+# Install all of the extensions.
+RUN ["/bin/bash", "-c", "source activate droste && jupyter contrib nbextension install --sys-prefix --symlink"]
+
 # When the container is run, start the jupyter notebook server.
-ENTRYPOINT ["/bin/bash", "-c", "source activate droste && jupyter notebook --config jupyter_notebook_config.py"]
+ENTRYPOINT ["/bin/bash", "-c", "source activate droste && jupyter notebook"]
