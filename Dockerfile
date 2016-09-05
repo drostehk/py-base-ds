@@ -2,7 +2,9 @@ FROM continuumio/anaconda3:4.1.1
 MAINTAINER Bill McCord <bill@droste.hk>
 
 # Install build essentials to get GCC and Make for XGBoost.
-RUN apt-get update && apt-get install -y build-essential
+# Install graphviz for basic graphing capabilities.
+# Install freetds-dev for MSSQL connection drivers.
+RUN apt-get update && apt-get install -y build-essential graphviz freetds-dev
 
 # Docker caches the statements in order, so we want to put the most expensive
 # statement (setting up the anaconda environment) first so that it is only
