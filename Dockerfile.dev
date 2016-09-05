@@ -9,3 +9,7 @@ MAINTAINER Bill McCord <bill@droste.hk>
 ADD environment.yml /droste/environment.yml
 
 RUN conda env update environment.yml
+
+# In the dev environment, we can replace the Jupyter notebook configuration
+# to allow for changes to occur.
+ADD jupyter_notebook_config.py /droste/jupyter_notebook_config.py
