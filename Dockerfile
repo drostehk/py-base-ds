@@ -3,8 +3,8 @@ MAINTAINER Bill McCord <bill@droste.hk>
 
 # Install build essentials to get GCC and Make for XGBoost.
 # Install graphviz for basic graphing capabilities.
-# Install freetds-dev for MSSQL connection drivers.
-RUN apt-get update && apt-get install -y build-essential graphviz freetds-dev
+# Install freetds-dev, unixodbc-dev, and tdsodbc for MSSQL connection drivers.
+RUN apt-get update && apt-get install -y build-essential graphviz freetds-dev unixodbc-dev tdsodbc
 
 # Docker caches the statements in order, so we want to put the most expensive
 # statement (setting up the anaconda environment) first so that it is only
@@ -16,6 +16,9 @@ WORKDIR /droste
 RUN conda env create environment.yml
 
 COPY jupyter_notebook_config.py /droste/jupyter_notebook_config.py
+
+# ODBC basic configuration.
+ADD ./config/odbcinst.ini /etc/odbcinst.ini
 
 # This volume is intended to hold the Jupyter notebooks.
 VOLUME /droste/notebooks
